@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport meta tag is crucial for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residencial Mamoré - Oportunidade Única de Investimento</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,11 +19,20 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        .whats-img {
-            width: 30px;
-            height: 30px;
+        /* Styles for the modal */
+        .modal {
+            transition: opacity 0.25s ease;
         }
-    
+        #floorPlanImage {
+            transition: transform 0.2s ease-in-out;
+            transform-origin: center center;
+        }
+        #modalImageContainer {
+            cursor: grab;
+        }
+        #modalImageContainer:active {
+            cursor: grabbing;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -32,7 +40,6 @@
     <!-- Hero Section -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 text-center">
-            <!-- Adjusted font size for different screen sizes -->
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Residencial Mamoré</h1>
             <p class="text-md sm:text-lg text-gray-600 mt-2">A sua oportunidade de construir o futuro em um lugar planejado para você.</p>
         </div>
@@ -41,19 +48,27 @@
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Realtor Section: Stacks vertically on mobile by default -->
+        <!-- Realtor Section -->
         <section class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
             <div class="md:w-1/4 text-center md:text-left mb-6 md:mb-0">
-                <img src="src/images/foto_corretor.png" alt="Corretor Antonio" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto md:mx-0 object-cover shadow-md border-4 border-teal-500">
+                <img src="/src/images/foto_corretor.png" alt="Corretor Antonio" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto md:mx-0 object-cover shadow-md border-4 border-teal-500">
             </div>
             <div class="md:w-3/4 md:pl-8 text-center md:text-left">
-                 <!-- Adjusted font size for mobile -->
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Olá, eu sou Antonio!</h2>
                 <p class="text-gray-600 mt-2">Seu corretor de confiança, pronto para te ajudar a encontrar o terreno ideal. Preparei condições especiais no Residencial Mamoré que você não pode perder. Vamos conversar e realizar seu sonho da casa própria!</p>
             </div>
         </section>
 
-        <!-- Pricing Tiers: Stacks to a single column on mobile -->
+        <!-- Floor Plan Section -->
+        <section class="text-center bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Conheça a Disposição dos Lotes</h2>
+            <p class="text-gray-600 mb-6">Veja a planta completa do loteamento e escolha o local perfeito para o seu novo lar ou investimento.</p>
+            <button id="openModalBtn" class="bg-teal-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-600 transition-transform transform hover:scale-105">
+                Ver Planta Completa
+            </button>
+        </section>
+
+        <!-- Pricing Tiers -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Option 1: Amarelo e Azul -->
@@ -64,7 +79,7 @@
                 </div>
                 <img src="https://placehold.co/600x400/4FD1C5/FFFFFF?text=Sua+Fam%C3%ADlia+Merece" alt="Imagem de um terreno com uma casa em construção" class="w-full h-48 object-cover">
                 <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-teal-700">Tabela SAC</span> (parcelas decrescentes)</p>
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
                         <p class="text-gray-600">Entrada facilitada</p>
                         <p class="text-2xl font-bold text-teal-800">10x de R$ 262,60</p>
@@ -72,48 +87,47 @@
                     </div>
                     <div class="text-center">
                         <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400">(Oferta por tempo indeterminado!!)</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
                         <p class="text-sm text-red-500 line-through">De R$ 45.000,00</p>
                         <p class="text-3xl font-bold text-teal-800">Por R$ 42.750,00</p>
                     </div>
                 </div>
                 <div class="p-6 bg-gray-50">
-                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Amarelo%20e%20Azul" target="_blank"
-                    class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
-                        <img src="src/images/WhatsApp.svg.webp" class="whats-img mr-2" alt="Ícone do WhatsApp">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Amarelo%20e%20Azul" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
                         <span class="text-center">Falar com Antonio no WhatsApp</span>
                     </a>
                 </div>
             </div>
+
             <!-- Option 2: Cinza e Laranja -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-              <div class="p-2 bg-slate-600 text-center">
-                  <h3 class="font-bold text-2xl text-white">Lotes Cinza e Laranja</h3>
-                  <p class="text-slate-200 text-sm">Com parcelas fixas!</p>
-              </div>
-              <img src="https://placehold.co/600x400/A0AEC0/FFFFFF?text=Seu+Novo+Come%C3%A7o" alt="Imagem de um terreno amplo e limpo" class="w-full h-48 object-cover">
-              <div class="p-6 flex-grow">
-                  <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
-                  <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
-                      <p class="text-gray-600">Entrada facilitada</p>
-                      <p class="text-2xl font-bold text-slate-800">10x de R$ 233,50</p>
-                      <p class="text-gray-600 mt-2">ou <span class="font-bold">R$ 2.000,00</span> à vista</p>
-                  </div>
-                  <div class="text-center">
-                    <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                    <p class="text-gray-400">(Oferta por tempo indeterminado!!)</p>
-                    <p class="text-sm text-red-500 line-through">De R$ 40.000,00</p>
-                    <p class="text-3xl font-bold text-slate-800">Por R$ 38.000,00</p>
-                  </div>
-              </div>
-              <div class="p-6 bg-gray-50">
-                  <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Cinza%20e%20Laranja" target="_blank"
-                    class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
-                        <img src="src/images/WhatsApp.svg.webp" class="whats-img mr-2" alt="Ícone do WhatsApp">
+                <div class="p-2 bg-slate-600 text-center">
+                    <h3 class="font-bold text-2xl text-white">Lotes Cinza e Laranja</h3>
+                    <p class="text-slate-200 text-sm">Com parcelas fixas!</p>
+                </div>
+                <img src="https://placehold.co/600x400/A0AEC0/FFFFFF?text=Seu+Novo+Come%C3%A7o" alt="Imagem de um terreno amplo e limpo" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
+                    <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
+                        <p class="text-gray-600">Entrada facilitada</p>
+                        <p class="text-2xl font-bold text-slate-800">10x de R$ 233,50</p>
+                        <p class="text-gray-600 mt-2">ou <span class="font-bold">R$ 2.000,00</span> à vista</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
+                        <p class="text-sm text-red-500 line-through">De R$ 40.000,00</p>
+                        <p class="text-3xl font-bold text-slate-800">Por R$ 38.000,00</p>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Cinza%20e%20Laranja" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
                         <span class="text-center">Falar com Antonio no WhatsApp</span>
                     </a>
-              </div>
-          </div>
+                </div>
+            </div>
 
             <!-- Option 3: Verde e Vermelho -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
@@ -123,7 +137,7 @@
                 </div>
                 <img src="https://placehold.co/600x400/38A169/FFFFFF?text=Invista+no+Melhor" alt="Imagem de um terreno em localização privilegiada, com árvores ao fundo" class="w-full h-48 object-cover">
                 <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-emerald-700">Tabela SAC</span> (parcelas decrescentes)</p>
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
                         <p class="text-gray-600">Entrada facilitada</p>
                         <p class="text-2xl font-bold text-emerald-800">10x de R$ 291,80</p>
@@ -131,34 +145,94 @@
                     </div>
                     <div class="text-center">
                         <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400">(Oferta por tempo indeterminado!!)</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
                         <p class="text-sm text-red-500 line-through">De R$ 50.000,00</p>
                         <p class="text-3xl font-bold text-emerald-800">Por R$ 47.500,00</p>
                     </div>
                 </div>
                  <div class="p-6 bg-gray-50">
-                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Verde%20e%20Vermelho" target="_blank"
-                    class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
-                        <img src="src/images/WhatsApp.svg.webp" class="whats-img mr-2" alt="Ícone do WhatsApp">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Verde%20e%20Vermelho" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
                         <span class="text-center">Falar com Antonio no WhatsApp</span>
                     </a>
+                </div>
             </div>
 
         </div>
-
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-12">
         <div class="container mx-auto px-6 py-8 text-center">
-            <!-- Adjusted font size for mobile -->
-            <h3 class="text-xl md:text-2xl font-bold">Antonio - Corretor de Imóveis</h3>
+            <h3 class="text-xl md:text-2xl font-bold">Antonio Caetano Lopes - Corretor de Imóveis</h3>
             <p class="mt-2">CRECI-RO 4779</p>
             <p class="mt-4">Entre em contato e vamos agendar uma visita!</p>
-            <p class="font-semibold text-lg mt-1">Telefone / WhatsApp: (69) 99390-9871</p>
+            <p class="font-semibold text-lg mt-1">Telefone / WhatsApp: <a href="tel:+5569993909871" class="hover:underline">(69) 99390-9871</a></p>     
             <p class="text-sm text-gray-400 mt-8">&copy; 2024 Residencial Mamoré. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Modal for Floor Plan -->
+    <div id="floorPlanModal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-full flex flex-col relative">
+            <div class="flex justify-between items-center p-2 border-b bg-gray-50 rounded-t-lg">
+                <div class="flex items-center">
+                    <button id="zoomInBtn" class="text-gray-700 hover:text-black text-3xl font-bold py-1 px-3" title="Ampliar">+</button>
+                    <button id="zoomOutBtn" class="text-gray-700 hover:text-black text-3xl font-bold py-1 px-3" title="Reduzir">-</button>
+                </div>
+                <button id="closeModalBtn" class="text-gray-600 hover:text-black text-4xl font-bold py-1 px-4">&times;</button>
+            </div>
+
+            <div id="modalImageContainer" class="flex-grow overflow-auto">
+                <img id="floorPlanImage" src="/src/images/planta nova mamore vendidos ate 02-08.png" alt="Planta Baixa do Loteamento Residencial Mamoré" class="w-full h-auto">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Lógica do Modal ---
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modal = document.getElementById('floorPlanModal');
+        const floorPlanImage = document.getElementById('floorPlanImage');
+
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        const closeModal = () => {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            // Redefine o zoom ao fechar
+            currentScale = 1.0;
+            floorPlanImage.style.transform = `scale(${currentScale})`;
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // --- Lógica do Zoom ---
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+        let currentScale = 1.0;
+        const scaleStep = 0.2;
+
+        zoomInBtn.addEventListener('click', () => {
+            currentScale += scaleStep;
+            floorPlanImage.style.transform = `scale(${currentScale})`;
+        });
+
+        zoomOutBtn.addEventListener('click', () => {
+            // Não permite zoom menor que o original (escala 1.0)
+            if (currentScale > 1.01) { // Usamos 1.01 para evitar problemas de arredondamento de float
+                currentScale -= scaleStep;
+                floorPlanImage.style.transform = `scale(${currentScale})`;
+            }
+        });
+    </script>
 
 </body>
 </html>
