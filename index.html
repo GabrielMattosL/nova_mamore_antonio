@@ -3,133 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residencial Mamoré - Oportunidade Única de Investimento</title>
+    <title>Residencial Mamoré - Invista no seu Futuro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url('src/images/BANNER-TOPO-scaled.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-highlight {
+            box-shadow: 0 0 15px rgba(252, 211, 77, 0.5); /* Amber glow */
         }
         .whatsapp-button {
             transition: all 0.3s ease;
         }
         .whatsapp-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            filter: brightness(1.1);
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="text-gray-800">
 
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Residencial Mamoré</h1>
-            <p class="text-md sm:text-lg text-gray-600 mt-2">A sua oportunidade de construir o futuro em um lugar planejado para você.</p>
+    <!-- Hero Section -->
+    <header class="hero-section text-white">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold uppercase tracking-wider">Residencial Mamoré</h1>
+            <p class="text-lg md:text-xl mt-4 text-gray-300 max-w-2xl mx-auto">Sua oportunidade de construir o futuro em um lugar planejado para você.</p>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
 
-        <section class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
+        <!-- Realtor Section -->
+        <section class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md p-8 mb-12 -mt-24 relative z-10">
             <div class="md:w-1/4 text-center md:text-left mb-6 md:mb-0">
-                <img src="src/images/foto_corretor.png" alt="Corretor Antonio" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto md:mx-0 object-cover shadow-md border-4 border-teal-500">
+                <img src="src/images/foto_corretor.png" alt="Corretor Antonio" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto md:mx-0 object-cover shadow-lg border-4 border-amber-400">
             </div>
             <div class="md:w-3/4 md:pl-8 text-center md:text-left">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Olá, eu sou Antonio!</h2>
+                 <h2 class="text-3xl font-bold text-gray-900">Olá, eu sou Antonio!</h2>
                 <p class="text-gray-600 mt-2">Seu corretor de confiança, pronto para te ajudar a encontrar o terreno ideal. Preparei condições especiais no Residencial Mamoré que você não pode perder. Vamos conversar e realizar seu sonho da casa própria!</p>
             </div>
         </section>
-
-        <section class="text-center bg-white rounded-xl shadow-lg p-8 mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Conheça a Disposição dos Lotes</h2>
-            <p class="text-gray-600 mb-6">Veja a planta completa do loteamento e escolha o local perfeito para o seu novo lar ou investimento.</p>
-            <a href="src/images/planta nova mamore vendidos ate 02-08.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-600 transition-transform transform hover:scale-105">
+        
+        <!-- Blueprint Section -->
+        <section class="text-center bg-gray-900 text-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-3xl font-bold mb-4">Conheça a Disposição dos Lotes</h2>
+            <p class="text-gray-300 mb-6 max-w-xl mx-auto">Veja a planta completa do loteamento e escolha o local perfeito para o seu novo lar ou investimento.</p>
+            <a href="src/images/planta nova mamore vendidos ate 02-08.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-400 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:bg-amber-300 transition-transform transform hover:scale-105">
                 Ver Planta Completa
             </a>
         </section>
 
+        <!-- Pricing Tiers -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300 border-4 border-teal-500">
-                 <div class="p-2 bg-teal-500 text-center">
-                    <h3 class="font-bold text-2xl text-white">Lotes Amarelo e Azul</h3>
-                    <p class="text-teal-100 text-sm">Melhor custo-benefício!</p>
-                </div>
-                <img src="https://placehold.co/600x400/4FD1C5/FFFFFF?text=Sua+Fam%C3%ADlia+Merece" alt="Imagem de um terreno com uma casa em construção" class="w-full h-48 object-cover">
-                <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-teal-700">Tabela SAC</span> (parcelas decrescentes)</p>
-                    <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
-                        <p class="text-gray-600">Entrada facilitada</p>
-                        <p class="text-2xl font-bold text-teal-800">10x de R$ 262,60</p>
-                        <p class="text-gray-600 mt-2">ou <span class="font-bold">R$ 2.250,00</span> à vista</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
-                        <p class="text-sm text-red-500 line-through">De R$ 45.000,00</p>
-                        <p class="text-3xl font-bold text-teal-800">Por R$ 42.750,00</p>
-                    </div>
-                </div>
-                <div class="p-6 bg-gray-50">
-                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Amarelo%20e%20Azul" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
-                        <span class="text-center">Falar com Antonio no WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="p-2 bg-slate-600 text-center">
+            <!-- Option 1: Cinza e Laranja -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:bg-gray-300 transition-transform transform hover:scale-105">
+                <div class="p-6 bg-gray-800 text-center">
                     <h3 class="font-bold text-2xl text-white">Lotes Cinza e Laranja</h3>
-                    <p class="text-slate-200 text-sm">Com parcelas fixas!</p>
+                    <p class="text-gray-300 text-sm mt-1">Com parcelas fixas!</p>
                 </div>
-                <img src="https://placehold.co/600x400/A0AEC0/FFFFFF?text=Seu+Novo+Come%C3%A7o" alt="Imagem de um terreno amplo e limpo" class="w-full h-48 object-cover">
-                <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
+                <div class="p-6 flex-grow flex flex-col">
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-gray-900">Tabela PRICE</span></p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
-                        <p class="text-gray-600">Entrada facilitada</p>
-                        <p class="text-2xl font-bold text-slate-800">10x de R$ 233,50</p>
-                        <p class="text-gray-600 mt-2">ou <span class="font-bold">R$ 2.000,00</span> à vista</p>
+                        <p class="text-gray-600 uppercase text-sm font-bold">Entrada</p>
+                        <p class="text-2xl font-bold text-gray-900">10x de R$ 233,50</p>
+                        <p class="text-gray-500 mt-1">ou <span class="font-bold">R$ 2.000,00</span> à vista</p>
                     </div>
-                    <div class="text-center">
-                        <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
+                    <div class="text-center mt-auto">
+                        <p class="text-gray-600">Valor do Lote com 5% OFF à vista:</p>
                         <p class="text-sm text-red-500 line-through">De R$ 40.000,00</p>
-                        <p class="text-3xl font-bold text-slate-800">Por R$ 38.000,00</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 38.000,00</p>
                     </div>
                 </div>
                 <div class="p-6 bg-gray-50">
-                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Cinza%20e%20Laranja" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Cinza%20e%20Laranja" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
                         <span class="text-center">Falar com Antonio no WhatsApp</span>
                     </a>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="p-2 bg-emerald-600 text-center">
-                    <h3 class="font-bold text-2xl text-white">Lotes Verde e Vermelho</h3>
-                    <p class="text-emerald-200 text-sm">Localização privilegiada!</p>
+            <!-- Option 2: Amarelo e Azul (Highlighted) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-4 border-amber-400 card-highlight hover:bg-amber-100 transition-transform transform hover:scale-105">
+                 <div class="p-6 bg-amber-400 text-center">
+                    <h3 class="font-bold text-2xl text-gray-900">Lotes Amarelo e Azul</h3>
+                    <p class="text-gray-800 text-sm mt-1 font-semibold">Melhor custo-benefício!</p>
                 </div>
-                <img src="https://placehold.co/600x400/38A169/FFFFFF?text=Invista+no+Melhor" alt="Imagem de um terreno em localização privilegiada, com árvores ao fundo" class="w-full h-48 object-cover">
-                <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-emerald-700">Tabela SAC</span> (parcelas decrescentes)</p>
+                <div class="p-6 flex-grow flex flex-col">
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-gray-900">Tabela SAC</span> (decrescente)</p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
-                        <p class="text-gray-600">Entrada facilitada</p>
-                        <p class="text-2xl font-bold text-emerald-800">10x de R$ 291,80</p>
-                        <p class="text-gray-600 mt-2">ou <span class="font-bold">R$ 2.500,00</span> à vista</p>
+                        <p class="text-gray-600 uppercase text-sm font-bold">Entrada</p>
+                        <p class="text-2xl font-bold text-gray-900">10x de R$ 262,60</p>
+                        <p class="text-gray-500 mt-1">ou <span class="font-bold">R$ 2.250,00</span> à vista</p>
                     </div>
-                    <div class="text-center">
-                        <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
+                    <div class="text-center mt-auto">
+                        <p class="text-gray-600">Valor do Lote com 5% OFF à vista:</p>
+                        <p class="text-sm text-red-500 line-through">De R$ 45.000,00</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 42.750,00</p>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Amarelo%20e%20Azul" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                        <span class="text-center">Falar com Antonio no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Option 3: Verde e Vermelho -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:bg-gray-300 transition-transform transform hover:scale-105">
+                <div class="p-6 bg-gray-800 text-center">
+                    <h3 class="font-bold text-2xl text-white">Lotes Verde e Vermelho</h3>
+                    <p class="text-gray-300 text-sm mt-1">Localização privilegiada!</p>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-gray-900">Tabela SAC</span> (decrescente)</p>
+                    <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
+                        <p class="text-gray-600 uppercase text-sm font-bold">Entrada</p>
+                        <p class="text-2xl font-bold text-gray-900">10x de R$ 291,80</p>
+                        <p class="text-gray-500 mt-1">ou <span class="font-bold">R$ 2.500,00</span> à vista</p>
+                    </div>
+                    <div class="text-center mt-auto">
+                        <p class="text-gray-600">Valor do Lote com 5% OFF à vista:</p>
                         <p class="text-sm text-red-500 line-through">De R$ 50.000,00</p>
-                        <p class="text-3xl font-bold text-emerald-800">Por R$ 47.500,00</p>
+                        <p class="text-4xl font-extrabold text-gray-900">R$ 47.500,00</p>
                     </div>
                 </div>
                  <div class="p-6 bg-gray-50">
-                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Verde%20e%20Vermelho" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-600">
+                    <a href="https://wa.me/5569993909871?text=Tenho%20interesse%20sobre%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20terreno%20Verde%20e%20Vermelho" target="_blank" class="whatsapp-button flex items-center justify-center w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
                         <span class="text-center">Falar com Antonio no WhatsApp</span>
                     </a>
@@ -139,16 +153,17 @@
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white mt-12">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <h3 class="text-xl md:text-2xl font-bold">Antonio Caetano Lopes</h3>
-            <p class="text-gray-100">Corretor de Imóveis</p>
-            <p class="mt-2">CRECI-RO 4779</p>
-            <p class="mt-4">Entre em contato e vamos agendar uma visita!</p>
-            <p class="font-semibold text-lg mt-1">Telefone / WhatsApp: <a href="tel:+5569993909871" class="hover:underline">(69) 99390-9871</a></p>
-            <p class="text-sm text-gray-400 mt-8">&copy; 2024 Residencial Mamoré. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <h3 class="text-2xl font-bold">Antonio Caetano Lopes</h3>
+            <p class="text-amber-400 font-semibold">Corretor de Imóveis</p>
+            <p class="mt-2 text-gray-300">CRECI-RO 4779</p>
+            <p class="mt-6 text-gray-300">Entre em contato e vamos agendar uma visita!</p>
+            <p class="font-bold text-xl mt-1"><a href="tel:+5569993909871" class="hover:underline">(69) 99390-9871</a></p>
+            <p class="text-sm text-gray-500 mt-8">&copy; 2024 Residencial Mamoré. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    </body>
+</body>
 </html>
