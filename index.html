@@ -19,25 +19,10 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        /* Styles for the modal */
-        .modal {
-            transition: opacity 0.25s ease;
-        }
-        #floorPlanImage {
-            transition: transform 0.2s ease-in-out;
-            transform-origin: center center;
-        }
-        #modalImageContainer {
-            cursor: grab;
-        }
-        #modalImageContainer:active {
-            cursor: grabbing;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Hero Section -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 text-center">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Residencial Mamoré</h1>
@@ -45,10 +30,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Realtor Section -->
         <section class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
             <div class="md:w-1/4 text-center md:text-left mb-6 md:mb-0">
                 <img src="/src/images/foto_corretor.png" alt="Corretor Antonio" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto md:mx-0 object-cover shadow-md border-4 border-teal-500">
@@ -59,19 +42,16 @@
             </div>
         </section>
 
-        <!-- Floor Plan Section -->
         <section class="text-center bg-white rounded-xl shadow-lg p-8 mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Conheça a Disposição dos Lotes</h2>
             <p class="text-gray-600 mb-6">Veja a planta completa do loteamento e escolha o local perfeito para o seu novo lar ou investimento.</p>
-            <button id="openModalBtn" class="bg-teal-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-600 transition-transform transform hover:scale-105">
+            <a href="/src/images/planta nova mamore vendidos ate 02-08.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-600 transition-transform transform hover:scale-105">
                 Ver Planta Completa
-            </button>
+            </a>
         </section>
 
-        <!-- Pricing Tiers -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Option 1: Amarelo e Azul -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300 border-4 border-teal-500">
                  <div class="p-2 bg-teal-500 text-center">
                     <h3 class="font-bold text-2xl text-white">Lotes Amarelo e Azul</h3>
@@ -79,7 +59,7 @@
                 </div>
                 <img src="https://placehold.co/600x400/4FD1C5/FFFFFF?text=Sua+Fam%C3%ADlia+Merece" alt="Imagem de um terreno com uma casa em construção" class="w-full h-48 object-cover">
                 <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-teal-700">Tabela SAC</span> (parcelas decrescentes)</p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
                         <p class="text-gray-600">Entrada facilitada</p>
                         <p class="text-2xl font-bold text-teal-800">10x de R$ 262,60</p>
@@ -87,7 +67,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
                         <p class="text-sm text-red-500 line-through">De R$ 45.000,00</p>
                         <p class="text-3xl font-bold text-teal-800">Por R$ 42.750,00</p>
                     </div>
@@ -100,7 +80,6 @@
                 </div>
             </div>
 
-            <!-- Option 2: Cinza e Laranja -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
                 <div class="p-2 bg-slate-600 text-center">
                     <h3 class="font-bold text-2xl text-white">Lotes Cinza e Laranja</h3>
@@ -116,7 +95,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
                         <p class="text-sm text-red-500 line-through">De R$ 40.000,00</p>
                         <p class="text-3xl font-bold text-slate-800">Por R$ 38.000,00</p>
                     </div>
@@ -129,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- Option 3: Verde e Vermelho -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
                 <div class="p-2 bg-emerald-600 text-center">
                     <h3 class="font-bold text-2xl text-white">Lotes Verde e Vermelho</h3>
@@ -137,7 +115,7 @@
                 </div>
                 <img src="https://placehold.co/600x400/38A169/FFFFFF?text=Invista+no+Melhor" alt="Imagem de um terreno em localização privilegiada, com árvores ao fundo" class="w-full h-48 object-cover">
                 <div class="p-6 flex-grow">
-                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-slate-700">Tabela PRICE</span></p>
+                    <p class="text-center text-lg font-semibold text-gray-700 mb-4">Financiamento com <span class="font-bold text-emerald-700">Tabela SAC</span> (parcelas decrescentes)</p>
                     <div class="text-center bg-gray-100 p-4 rounded-lg mb-4">
                         <p class="text-gray-600">Entrada facilitada</p>
                         <p class="text-2xl font-bold text-emerald-800">10x de R$ 291,80</p>
@@ -145,7 +123,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-gray-600">Valor do Lote com 5% OFF:</p>
-                        <p class="text-gray-400 text-sm">(Oferta por tempo limitado!!)</p>
+                        <p class="text-gray-400 text-sm">(Oferta por tempo indeterminado!!)</p>
                         <p class="text-sm text-red-500 line-through">De R$ 50.000,00</p>
                         <p class="text-3xl font-bold text-emerald-800">Por R$ 47.500,00</p>
                     </div>
@@ -161,78 +139,16 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-12">
         <div class="container mx-auto px-6 py-8 text-center">
-            <h3 class="text-xl md:text-2xl font-bold">Antonio Caetano Lopes - Corretor de Imóveis</h3>
+            <h3 class="text-xl md:text-2xl font-bold">Antonio Caetano Lopes</h3>
+            <p class="text-gray-100">Corretor de Imóveis</p>
             <p class="mt-2">CRECI-RO 4779</p>
             <p class="mt-4">Entre em contato e vamos agendar uma visita!</p>
-            <p class="font-semibold text-lg mt-1">Telefone / WhatsApp: <a href="tel:+5569993909871" class="hover:underline">(69) 99390-9871</a></p>     
+            <p class="font-semibold text-lg mt-1">Telefone / WhatsApp: <a href="tel:+5569993909871" class="hover:underline">(69) 99390-9871</a></p>
             <p class="text-sm text-gray-400 mt-8">&copy; 2024 Residencial Mamoré. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Modal for Floor Plan -->
-    <div id="floorPlanModal" class="modal fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 opacity-0 pointer-events-none">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-full flex flex-col relative">
-            <div class="flex justify-between items-center p-2 border-b bg-gray-50 rounded-t-lg">
-                <div class="flex items-center">
-                    <button id="zoomInBtn" class="text-gray-700 hover:text-black text-3xl font-bold py-1 px-3" title="Ampliar">+</button>
-                    <button id="zoomOutBtn" class="text-gray-700 hover:text-black text-3xl font-bold py-1 px-3" title="Reduzir">-</button>
-                </div>
-                <button id="closeModalBtn" class="text-gray-600 hover:text-black text-4xl font-bold py-1 px-4">&times;</button>
-            </div>
-
-            <div id="modalImageContainer" class="flex-grow overflow-auto">
-                <img id="floorPlanImage" src="/src/images/planta nova mamore vendidos ate 02-08.png" alt="Planta Baixa do Loteamento Residencial Mamoré" class="w-full h-auto">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // --- Lógica do Modal ---
-        const openModalBtn = document.getElementById('openModalBtn');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const modal = document.getElementById('floorPlanModal');
-        const floorPlanImage = document.getElementById('floorPlanImage');
-
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-        });
-
-        const closeModal = () => {
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            // Redefine o zoom ao fechar
-            currentScale = 1.0;
-            floorPlanImage.style.transform = `scale(${currentScale})`;
-        };
-
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        // --- Lógica do Zoom ---
-        const zoomInBtn = document.getElementById('zoomInBtn');
-        const zoomOutBtn = document.getElementById('zoomOutBtn');
-        let currentScale = 1.0;
-        const scaleStep = 0.2;
-
-        zoomInBtn.addEventListener('click', () => {
-            currentScale += scaleStep;
-            floorPlanImage.style.transform = `scale(${currentScale})`;
-        });
-
-        zoomOutBtn.addEventListener('click', () => {
-            // Não permite zoom menor que o original (escala 1.0)
-            if (currentScale > 1.01) { // Usamos 1.01 para evitar problemas de arredondamento de float
-                currentScale -= scaleStep;
-                floorPlanImage.style.transform = `scale(${currentScale})`;
-            }
-        });
-    </script>
-
-</body>
+    </body>
 </html>
